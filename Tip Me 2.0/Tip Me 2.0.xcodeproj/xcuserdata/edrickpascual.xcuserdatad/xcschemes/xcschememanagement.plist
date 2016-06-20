@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Tip Pro 2.0.xcscheme</key>
+		<key>Tip Me 2.0.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,7 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>616022961D1894C700891945</key>
+		<key>616022B41D18973C00891945</key>
 		<dict>
 			<key>primary</key>
 			<true/>

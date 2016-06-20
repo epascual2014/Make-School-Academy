@@ -7,25 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6160229B1D1894C700891945 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6160229A1D1894C700891945 /* AppDelegate.swift */; };
-		6160229D1D1894C700891945 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6160229C1D1894C700891945 /* ViewController.swift */; };
-		616022A01D1894C700891945 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6160229E1D1894C700891945 /* Main.storyboard */; };
-		616022A21D1894C700891945 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 616022A11D1894C700891945 /* Assets.xcassets */; };
-		616022A51D1894C700891945 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 616022A31D1894C700891945 /* LaunchScreen.storyboard */; };
+		616022B91D18973C00891945 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616022B81D18973C00891945 /* AppDelegate.swift */; };
+		616022BB1D18973C00891945 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616022BA1D18973C00891945 /* ViewController.swift */; };
+		616022BE1D18973C00891945 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 616022BC1D18973C00891945 /* Main.storyboard */; };
+		616022C01D18973C00891945 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 616022BF1D18973C00891945 /* Assets.xcassets */; };
+		616022C31D18973C00891945 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 616022C11D18973C00891945 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		616022971D1894C700891945 /* Tip Pro 2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tip Pro 2.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6160229A1D1894C700891945 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6160229C1D1894C700891945 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		6160229F1D1894C700891945 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		616022A11D1894C700891945 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		616022A41D1894C700891945 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		616022A61D1894C700891945 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		616022B51D18973C00891945 /* Tip Me 2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tip Me 2.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		616022B81D18973C00891945 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		616022BA1D18973C00891945 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		616022BD1D18973C00891945 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		616022BF1D18973C00891945 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		616022C21D18973C00891945 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		616022C41D18973C00891945 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		616022941D1894C700891945 /* Frameworks */ = {
+		616022B21D18973C00891945 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -35,71 +35,71 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6160228E1D1894C700891945 = {
+		616022AC1D18973C00891945 = {
 			isa = PBXGroup;
 			children = (
-				616022991D1894C700891945 /* Tip Pro 2.0 */,
-				616022981D1894C700891945 /* Products */,
+				616022B71D18973C00891945 /* Tip Me 2.0 */,
+				616022B61D18973C00891945 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		616022981D1894C700891945 /* Products */ = {
+		616022B61D18973C00891945 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				616022971D1894C700891945 /* Tip Pro 2.0.app */,
+				616022B51D18973C00891945 /* Tip Me 2.0.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		616022991D1894C700891945 /* Tip Pro 2.0 */ = {
+		616022B71D18973C00891945 /* Tip Me 2.0 */ = {
 			isa = PBXGroup;
 			children = (
-				6160229A1D1894C700891945 /* AppDelegate.swift */,
-				6160229C1D1894C700891945 /* ViewController.swift */,
-				6160229E1D1894C700891945 /* Main.storyboard */,
-				616022A11D1894C700891945 /* Assets.xcassets */,
-				616022A31D1894C700891945 /* LaunchScreen.storyboard */,
-				616022A61D1894C700891945 /* Info.plist */,
+				616022B81D18973C00891945 /* AppDelegate.swift */,
+				616022BA1D18973C00891945 /* ViewController.swift */,
+				616022BC1D18973C00891945 /* Main.storyboard */,
+				616022BF1D18973C00891945 /* Assets.xcassets */,
+				616022C11D18973C00891945 /* LaunchScreen.storyboard */,
+				616022C41D18973C00891945 /* Info.plist */,
 			);
-			path = "Tip Pro 2.0";
+			path = "Tip Me 2.0";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		616022961D1894C700891945 /* Tip Pro 2.0 */ = {
+		616022B41D18973C00891945 /* Tip Me 2.0 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 616022A91D1894C700891945 /* Build configuration list for PBXNativeTarget "Tip Pro 2.0" */;
+			buildConfigurationList = 616022C71D18973C00891945 /* Build configuration list for PBXNativeTarget "Tip Me 2.0" */;
 			buildPhases = (
-				616022931D1894C700891945 /* Sources */,
-				616022941D1894C700891945 /* Frameworks */,
-				616022951D1894C700891945 /* Resources */,
+				616022B11D18973C00891945 /* Sources */,
+				616022B21D18973C00891945 /* Frameworks */,
+				616022B31D18973C00891945 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Tip Pro 2.0";
-			productName = "Tip Pro 2.0";
-			productReference = 616022971D1894C700891945 /* Tip Pro 2.0.app */;
+			name = "Tip Me 2.0";
+			productName = "Tip Me 2.0";
+			productReference = 616022B51D18973C00891945 /* Tip Me 2.0.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		6160228F1D1894C700891945 /* Project object */ = {
+		616022AD1D18973C00891945 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0720;
-				ORGANIZATIONNAME = Epascual;
+				ORGANIZATIONNAME = "Make School";
 				TargetAttributes = {
-					616022961D1894C700891945 = {
+					616022B41D18973C00891945 = {
 						CreatedOnToolsVersion = 7.2.1;
 					};
 				};
 			};
-			buildConfigurationList = 616022921D1894C700891945 /* Build configuration list for PBXProject "Tip Pro 2.0" */;
+			buildConfigurationList = 616022B01D18973C00891945 /* Build configuration list for PBXProject "Tip Me 2.0" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -107,54 +107,54 @@
 				en,
 				Base,
 			);
-			mainGroup = 6160228E1D1894C700891945;
-			productRefGroup = 616022981D1894C700891945 /* Products */;
+			mainGroup = 616022AC1D18973C00891945;
+			productRefGroup = 616022B61D18973C00891945 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				616022961D1894C700891945 /* Tip Pro 2.0 */,
+				616022B41D18973C00891945 /* Tip Me 2.0 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		616022951D1894C700891945 /* Resources */ = {
+		616022B31D18973C00891945 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				616022A51D1894C700891945 /* LaunchScreen.storyboard in Resources */,
-				616022A21D1894C700891945 /* Assets.xcassets in Resources */,
-				616022A01D1894C700891945 /* Main.storyboard in Resources */,
+				616022C31D18973C00891945 /* LaunchScreen.storyboard in Resources */,
+				616022C01D18973C00891945 /* Assets.xcassets in Resources */,
+				616022BE1D18973C00891945 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		616022931D1894C700891945 /* Sources */ = {
+		616022B11D18973C00891945 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6160229D1D1894C700891945 /* ViewController.swift in Sources */,
-				6160229B1D1894C700891945 /* AppDelegate.swift in Sources */,
+				616022BB1D18973C00891945 /* ViewController.swift in Sources */,
+				616022B91D18973C00891945 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		6160229E1D1894C700891945 /* Main.storyboard */ = {
+		616022BC1D18973C00891945 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6160229F1D1894C700891945 /* Base */,
+				616022BD1D18973C00891945 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		616022A31D1894C700891945 /* LaunchScreen.storyboard */ = {
+		616022C11D18973C00891945 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				616022A41D1894C700891945 /* Base */,
+				616022C21D18973C00891945 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -162,7 +162,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		616022A71D1894C700891945 /* Debug */ = {
+		616022C51D18973C00891945 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -207,7 +207,7 @@
 			};
 			name = Debug;
 		};
-		616022A81D1894C700891945 /* Release */ = {
+		616022C61D18973C00891945 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -245,24 +245,24 @@
 			};
 			name = Release;
 		};
-		616022AA1D1894C700891945 /* Debug */ = {
+		616022C81D18973C00891945 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "Tip Pro 2.0/Info.plist";
+				INFOPLIST_FILE = "Tip Me 2.0/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.epascual.Tip-Pro-2-0";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.makeschool.Tip-Me-2-0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		616022AB1D1894C700891945 /* Release */ = {
+		616022C91D18973C00891945 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "Tip Pro 2.0/Info.plist";
+				INFOPLIST_FILE = "Tip Me 2.0/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.epascual.Tip-Pro-2-0";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.makeschool.Tip-Me-2-0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -270,24 +270,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		616022921D1894C700891945 /* Build configuration list for PBXProject "Tip Pro 2.0" */ = {
+		616022B01D18973C00891945 /* Build configuration list for PBXProject "Tip Me 2.0" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				616022A71D1894C700891945 /* Debug */,
-				616022A81D1894C700891945 /* Release */,
+				616022C51D18973C00891945 /* Debug */,
+				616022C61D18973C00891945 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		616022A91D1894C700891945 /* Build configuration list for PBXNativeTarget "Tip Pro 2.0" */ = {
+		616022C71D18973C00891945 /* Build configuration list for PBXNativeTarget "Tip Me 2.0" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				616022AA1D1894C700891945 /* Debug */,
-				616022AB1D1894C700891945 /* Release */,
+				616022C81D18973C00891945 /* Debug */,
+				616022C91D18973C00891945 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 6160228F1D1894C700891945 /* Project object */;
+	rootObject = 616022AD1D18973C00891945 /* Project object */;
 }

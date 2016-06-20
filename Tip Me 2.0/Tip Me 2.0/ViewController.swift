@@ -1,9 +1,9 @@
 //
 //  ViewController.swift
-//  Tip Pro 2.0
+//  Tip Me 2.0
 //
 //  Created by Edrick Pascual on 6/20/16.
-//  Copyright © 2016 Epascual. All rights reserved.
+//  Copyright © 2016 Make School. All rights reserved.
 //
 
 import UIKit
