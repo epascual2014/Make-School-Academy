@@ -41,7 +41,6 @@ func eat(name: String, food: String) {
         
     } else {
         sleep(name)
-        print("\(name) eats \(food)")
     }
     
 }

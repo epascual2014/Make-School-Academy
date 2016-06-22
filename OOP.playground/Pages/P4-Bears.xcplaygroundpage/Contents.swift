@@ -11,12 +11,63 @@
  */
 
 class Tiger {
-    // copy your Tiger class from the previous section!
-
+    // put your instance variables here!
+    var name: String
+    var favoriteFood: String
+    
+    
+    init(name: String) {
+        // put your initializer content here
+        self.favoriteFood = "meat"
+        self.name = name
+    }
+    
+    func sleep(name: String) {
+        print("\(name) sleeps for 8 hours")
+        
+    }
+    
+    func eat(food: String) {
+        print("\(name) eats \(food)")
+        
+        if food == favoriteFood {
+            
+            print("YUM!! \(name) wants more \(food)")
+            
+        } else {
+            sleep(name)
+        }
+    }
 }
+
+
 
 class Bear {
     // complete the Bear class here!
+    var name: String
+    var favoriteFood: String
+    
+    init(name: String) {
+        self.favoriteFood = "FISH"
+        self.name = name
+    }
+    
+    func sleep(name: String) {
+        print("\(name) hibernates for 4 months")
+    }
+    
+    func eat(food: String) {
+        print("\(name) eats \(food)")
+        
+        if food == favoriteFood {
+            
+            print("YUM!! \(name) wants more \(food)")
+            
+        } else {
+            sleep(name)
+        }
+    }
+
 
 }
 
@@ -40,12 +91,12 @@ class Bear {
 
  */
 
-//let tigger = Tiger(name: "Tigger")
-//tigger.eat("meat")
-//tigger.eat("kibble")
-//let pooh = Bear(name: "Pooh")
-//pooh.eat("fish")
-//pooh.eat("meat")
+let tigger = Tiger(name: "Tigger")
+tigger.eat("meat")
+tigger.eat("kibble")
+let pooh = Bear(name: "Pooh")
+pooh.eat("FISH")
+pooh.eat("meat")
 
 
 

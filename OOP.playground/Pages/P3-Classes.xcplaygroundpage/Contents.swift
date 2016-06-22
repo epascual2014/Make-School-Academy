@@ -144,16 +144,21 @@ class Tiger {
         self.name = name
     }
     
-    func sleep() {
-        // complete your sleep function here, noting the change from global to instance variables
-        print("\(self.name) sleeps for 8 hours")
+    func sleep(name: String) {
+        print("\(name) sleeps for 8 hours")
         
     }
-
+    
     func eat(food: String) {
-        // complete your eat function here!
-        print("\(name) eats meat")
-
+        print("\(name) eats \(food)")
+        
+        if food == favoriteFood {
+            
+            print("YUM!! \(name) wants more \(food)")
+            
+        } else {
+            sleep(name)
+        }
     }
 }
 
