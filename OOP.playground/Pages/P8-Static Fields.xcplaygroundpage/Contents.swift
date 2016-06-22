@@ -82,6 +82,7 @@ class Animal {
     init(name: String, favoriteFood: String) {
         self.name = name
         self.favoriteFood = favoriteFood
+        Animal.population += 1
     }
     
     func sleep(name: String) {
@@ -97,8 +98,8 @@ class Animal {
         }
     }
     
-    func populationCount(){
-        Animal.population += 1
+    static func populationCount(){
+        return populationCount()
     }
 }
 
@@ -172,7 +173,6 @@ class Bee: Animal {
 class Zookeeper {
     // put instance variables here
     var name: String
-    var population = animals.count
     
     init(name: String) {
         self.name = name
@@ -180,7 +180,7 @@ class Zookeeper {
     
     func feedAnimals(animals: [Animal], food: String) {
         // complete your feedAnimals function here.
-        print("\(name) is feeding \(food) to \(animals.count) of \(population) total animals")
+        print("\(name) is feeding \(food) to \(animals.count) of \(Animal.population) total animals")
         for animal in animals {
             animal.eat(food)
         }
