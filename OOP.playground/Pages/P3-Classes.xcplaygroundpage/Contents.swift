@@ -130,20 +130,26 @@ AnotherExampleObject.myVariable
 
 class Tiger {
     // put your instance variables here!
+    var name: String
+    var favoriteFood: String
 
 
     init(name: String) {
         // put your initializer content here
+        self.favoriteFood = "meat"
+        self.name = name
 
     }
 
     func sleep() {
         // complete your sleep function here, noting the change from global to instance variables
-
+        print("\(name) sleeps for 8 hours")
+        
     }
 
     func eat(food: String) {
         // complete your eat function here!
+        print("\(name) eats")
 
     }
 }

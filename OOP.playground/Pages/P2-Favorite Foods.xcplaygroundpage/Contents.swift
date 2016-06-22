@@ -32,7 +32,16 @@ func sleep(name: String) {
 }
 
 func eat(name: String, food: String) {
-
+    print("\(name) eats \(food)")
+    
+    if food == favoriteFood {
+        print("YUM!! \(name) wants more \(food)")
+    } else {
+        print("\(name) eats \(food)")
+    }
+    
+    
+    
 }
 
 eat("Tigger", food: "meat")
