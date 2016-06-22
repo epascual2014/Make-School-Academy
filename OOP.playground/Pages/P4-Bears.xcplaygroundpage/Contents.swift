@@ -67,8 +67,6 @@ class Bear {
             sleep(name)
         }
     }
-
-
 }
 
 

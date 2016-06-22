@@ -9,22 +9,35 @@
  */
 class Animal {
     // Put your instance variables here
-
+    var name: String
+    var favoriteFood: String
+    
     init(name: String, favoriteFood: String) {
         // put your initializer content here
+        self.name = name
+        self.favoriteFood = favoriteFood
 
     }
-
-    func sleep() {
-        // complete your sleep function here, noting the change from global to instance variables
-
+    
+    func sleep(name: String) {
+        print("\(name) sleeps for 8 hours")
+        
     }
 
     func eat(food: String) {
-        // complete your eat function here!
-
+        print("\(name) eats \(food)")
+        
+        if food == favoriteFood {
+            
+            print("YUM!! \(name) wants more \(food)")
+            
+        } else {
+            sleep(name)
+        }
     }
 }
+
+
 /*:
 
  You might be wondering how this `Animal` class is going to save us any time? After all, we're going to have to write three more classes for Giraffe, Bee, and Unicorn, right?
@@ -58,6 +71,7 @@ class ExampleSubclass: ExampleSuperclass {
         super.init(message: message)
     }
 
+    // this is called first
     override func doStuff() {
         super.doStuff()
         print("My secret message is '\(self.mySecretMessage)'!")
@@ -79,7 +93,8 @@ let subclassInstance = ExampleSubclass(message: "Hi there Make School student. W
  - callout(Try it out!): Add calls to the `doStuff` function on both `superclassInstance` and `subclassInstance` in the space below. What do you expect them to output?
 
  */
-
+//superclassInstance.doStuff()
+//subclassInstance.doStuff()
 
 
 
@@ -91,7 +106,8 @@ let subclassInstance = ExampleSubclass(message: "Hi there Make School student. W
 
  */
 
-
+//superclassInstance.sayGoodbye()
+//subclassInstance.sayGoodbye()
 
 
 /*:
@@ -113,18 +129,22 @@ class Tiger: Animal {
 
     init(name: String) {
         // don't forget to correct the call to the superclass initializer!
-        super.init(name: "", favoriteFood: "")
+        super.init(name: name, favoriteFood: "meat")
     }
 
 }
 
 class Bear: Animal {
     // complete the Bear class here, using the completed Tiger class as an example
-
-
+    
+    init(name: String){
+        super.init(name: name, favoriteFood: "fish")
+        
+    }
     // here, we override the sleep function
-    override func sleep() {
+    override func sleep(name: String) {
         // add in your Bear-specific sleep code here
+        print("\(name) hibernates for 4 months")
 
     }
 }
@@ -148,10 +168,10 @@ class Bear: Animal {
 
  */
 
-//let tigger = Tiger(name: "Tigger")
-//tigger.eat("meat")
-//let pooh = Bear(name: "Pooh")
-//pooh.eat("fish")
-//pooh.eat("meat")
+let tigger = Tiger(name: "Tigger")
+tigger.eat("meat")
+let pooh = Bear(name: "Pooh")
+pooh.eat("fish")
+pooh.eat("meat")
 
 //: [Previous](@previous) | [Next](@next)
