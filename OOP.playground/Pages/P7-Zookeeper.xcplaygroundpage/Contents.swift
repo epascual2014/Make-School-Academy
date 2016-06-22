@@ -8,45 +8,95 @@
 
  */
 
-// Copy your Animal class here
 class Animal {
-
-    init(name: String) {
-
+    
+    var name: String
+    var favoriteFood: String
+    
+    init(name: String, favoriteFood: String) {
+        self.name = name
+        self.favoriteFood = favoriteFood
+        
     }
-
+    
+    func sleep(name: String) {
+        print("\(name) sleeps for 8 hours")
+    }
+    
     func eat(food: String) {
-
-    }
-
-    func sleep() {
-
+        print("\(name) eats \(food)")
+        if food == favoriteFood {
+            print("YUM!! \(name) wants more \(food)")
+        } else {
+            sleep(name)
+        }
     }
 }
 
-// Copy your Tiger class here
 class Tiger: Animal {
-
+    
+    init(name: String) {
+        super.init(name: name, favoriteFood: "meat")
+    }
 }
 
-// Copy your Bear class here
 class Bear: Animal {
-
+    
+    init(name: String){
+        super.init(name: name, favoriteFood: "fish")
+    }
+    
+    // overriding lets this class to do run its owns methods
+    override func sleep(name: String) {
+        print("\(name) hibernates for 4 months")
+    }
 }
 
-// Copy your Unicorn class here
 class Unicorn: Animal {
-
+    
+    init(name: String) {
+        super.init(name: name, favoriteFood: "marsh")
+    }
+    
+    override func sleep(name: String) {
+        print("\(name) sleeps in a cloud")
+    }
+    
+    override func eat(food:String) {
+        super.eat(food)
+    }
 }
 
-// Copy your Giraffe class here
 class Giraffe: Animal {
-
+    
+    init(name: String) {
+        super.init(name: name, favoriteFood: "leaves")
+    }
+    
+    override func eat(food: String) {
+        // check here if you don't like the food you were given...
+        if food != favoriteFood {
+            print("YUCK! \(name) will not eat \(food)")
+        } else {
+            super.eat(food)
+        }
+    }
 }
 
-// Copy your Bee class here
 class Bee: Animal {
-
+    
+    init(name: String) {
+        super.init(name: name, favoriteFood: "pollen")
+    }
+    
+    override func sleep(name: String) {
+        print("\(name) never sleeps")
+    }
+    
+    override func eat(food:String) {
+        print("YUCK!! \(name) will not eat \(food)")
+    }
+    
 }
 
 /*:
@@ -64,15 +114,20 @@ class Bee: Animal {
 // Implement the Zookeeper class here
 class Zookeeper {
     // put instance variables here
+    var name: String
 
     init(name: String) {
-        // save name to an instance variable
-
+        self.name = name
     }
 
     func feedAnimals(animals: [Animal], food: String) {
         // complete your feedAnimals function here.
-
+        print("\(name) is feeding \(food) to \(animals.count) animals")
+        for animal in animals {
+            animal.eat(food)
+        }
+        
+        
     }
 }
 
@@ -104,5 +159,8 @@ let animals: [Animal] = [
 ]
 let zookeeper = Zookeeper(name: "ZoeBot")
 zookeeper.feedAnimals(animals, food: "meat")
+
+
+
 
 //: [Previous](@previous) | [Next](@next)

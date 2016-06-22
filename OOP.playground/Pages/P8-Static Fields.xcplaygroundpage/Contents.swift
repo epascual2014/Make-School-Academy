@@ -55,6 +55,8 @@ class CrushingExampleClass: AnotherExampleClass {
 let instanceThree = CrushingExampleClass(message: "WHAT! NO! It's now...")
 
 
+
+
 /*:
  
  - note: You can actually use the keyword `class` in place of `static` _when writing type methods_. The difference is minute – a method marked with `class` allows one to _override_ the method implementation in a subclass, while a method marked with `static` does not allow this. 
@@ -73,57 +75,117 @@ let instanceThree = CrushingExampleClass(message: "WHAT! NO! It's now...")
 // Hint: Modify the initializer method to count the number of animals created
 class Animal {
     // here, make yourself a new type variable!
+    var name: String
+    var favoriteFood: String
+    static var population = 0
     
-    init(name: String) {
-        
+    init(name: String, favoriteFood: String) {
+        self.name = name
+        self.favoriteFood = favoriteFood
+    }
+    
+    func sleep(name: String) {
+        print("\(name) sleeps for 8 hours")
     }
     
     func eat(food: String) {
-        
+        print("\(name) eats \(food)")
+        if food == favoriteFood {
+            print("YUM!! \(name) wants more \(food)")
+        } else {
+            sleep(name)
+        }
     }
     
-    func sleep() {
-        
+    func populationCount(){
+        Animal.population += 1
     }
 }
 
-// Copy your Tiger class here
+
 class Tiger: Animal {
     
+    init(name: String) {
+        super.init(name: name, favoriteFood: "meat")
+    }
 }
 
-// Copy your Bear class here
 class Bear: Animal {
     
+    init(name: String){
+        super.init(name: name, favoriteFood: "fish")
+    }
+    
+    // overriding lets this class to do run its owns methods
+    override func sleep(name: String) {
+        print("\(name) hibernates for 4 months")
+    }
 }
 
-// Copy your Unicorn class here
 class Unicorn: Animal {
     
+    init(name: String) {
+        super.init(name: name, favoriteFood: "marsh")
+    }
+    
+    override func sleep(name: String) {
+        print("\(name) sleeps in a cloud")
+    }
+    
+    override func eat(food:String) {
+        super.eat(food)
+    }
 }
 
-// Copy your Giraffe class here
 class Giraffe: Animal {
     
+    init(name: String) {
+        super.init(name: name, favoriteFood: "leaves")
+    }
+    
+    override func eat(food: String) {
+        // check here if you don't like the food you were given...
+        if food != favoriteFood {
+            print("YUCK! \(name) will not eat \(food)")
+        } else {
+            super.eat(food)
+        }
+    }
 }
 
-// Copy your Bee class here
 class Bee: Animal {
+    
+    init(name: String) {
+        super.init(name: name, favoriteFood: "pollen")
+    }
+    
+    override func sleep(name: String) {
+        print("\(name) never sleeps")
+    }
+    
+    override func eat(food:String) {
+        print("YUCK!! \(name) will not eat \(food)")
+    }
     
 }
 
-// Copy your Zookeeper class here
 class Zookeeper {
+    // put instance variables here
+    var name: String
+    var population = animals.count
+    
     init(name: String) {
-        // complete your init function
+        self.name = name
     }
     
     func feedAnimals(animals: [Animal], food: String) {
         // complete your feedAnimals function here.
-        
+        print("\(name) is feeding \(food) to \(animals.count) of \(population) total animals")
+        for animal in animals {
+            animal.eat(food)
+        }
     }
 }
-
 
 /*:
  ## Testing
