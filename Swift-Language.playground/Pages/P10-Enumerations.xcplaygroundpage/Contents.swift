@@ -103,11 +103,12 @@ enum playerDirection {
     case Up, Right, Down, Left
 }
 
-// 4
+// 3
 var ticTacToeBoard: [[grid]] = [[.O, .X, .X],
                                 [.O, .X, .O],
                                 [.X, .O, .Empty]]
 
+//4
 enum color {
     case Red, Orange, Blue, Green
 }

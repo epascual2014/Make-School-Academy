@@ -41,7 +41,32 @@ Both enumerations come with an `allValues()` function, which returns an array co
 So now, using the above `enum` code (you'll have to type it out below), create a Card `struct` with `suit` and `rank` properties, and an initializer that accepts `suit` and `rank` parameters.
 */
 /* Place your code here! */
+enum Rank {
+    case Ace, Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King
+    
+    static func allValues() -> [Rank] {
+        return [Ace, Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King]
+    }
+}
 
+enum Suit {
+    case Spades, Hearts, Diamonds, Clubs
+    
+    static func allValues() -> [Suit] {
+        return [Spades, Hearts, Diamonds, Clubs]
+    }
+}
+
+struct Card {
+
+    var suit: Suit
+    var rank: Rank
+    
+    init (suit: Suit, rank: Rank) {
+        self.suit = suit
+        self.rank = rank
+    }
+}
 
 
 

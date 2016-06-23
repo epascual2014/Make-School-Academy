@@ -61,6 +61,40 @@ jessica.numStudents
 */
 // Write your challenge code here:
 
+enum CarColor {
+    case Red, Yellow, Brown
+}
+
+enum CarSpeed {
+    case Fast, Slow, Medium
+}
+
+class Car {
+    
+    var speed: CarSpeed
+    var fuel = 100
+    var color: CarColor
+    
+    init(speed: CarSpeed, color: CarColor){
+        self.speed = speed
+        self.color = color
+        
+    }
+    
+    static func ferraris() -> Car {
+        return Car(speed: .Fast, color: .Red)
+        
+    }
+    
+    static func towTruck() -> Car {
+        return Car(speed: .Slow, color: .Yellow)
+    }
+    
+    static func upsTruck() -> Car {
+        return Car(speed: .Slow, color: .Brown)
+    }
+    
+}
 
 
 

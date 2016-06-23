@@ -140,6 +140,7 @@ Because of the provided convenience initializers, someone using the `Milk` class
 let defaultMilk = Milk()
 defaultMilk.flavor
 defaultMilk.fat
+
 /*:
  Notice that the default values of `None` and `TwoPercent` were chosen. Also notice that during the initialization sequence, two convenience initializers and the designated initializer were called. The sequence went:
     
@@ -228,15 +229,98 @@ oddCow
     Create a few more vehicles of your choosing! For example, an ambulance could have a `sirenOn` variable that could be instantiated to `false` with a convenience initializer. Make sure to use at least 3 convenience, 2 required, and 2 failable instantiations.
  */
 // Write your challenge code here:
+class Car {
+    
+    var speed: String!
+    var fuel: Int?
+    var color: String!
+    
+}
+
+class RaceCar: Car {
+
+    init(speed: String) {
+        super.init()
+        self.speed = "fast"
+    }
+}
+
+class TowTruck: Car {
+    
+    init(speed: String) {
+        super.init()
+        self.speed = "slow"
+    }
+}
+
+class DeliveryTruck: Car {
+    
+    init(speed: String, color: String) {
+        super.init()
+        self.speed = "slow"
+        self.color = "brown"
+    }
+}
+
+class Ambulance: Car {
+    
+    var sireOn: Bool?
+    
+    init(speed: String, fuel: Int, color: String) {
+        super.init()
+        self.color = color
+        self.speed = speed
+    }
+
+    convenience init(sireOn: Bool, color: String, speed: String) {
+        self.init(speed:"fast", fuel: 50, color: "white")
+        self.sireOn = false
+        self.fuel = 50
+        self.speed = "fast"
+    }
+
+}
+
+class AmbulanceSecond: Car {
+    
+    var miles: Int?
+    
+    required init(speed: String, fuel: Int, color: String) {
+        super.init()
+        self.color = color
+        self.fuel = 100
+        self.speed = speed
+    }
+    
+    init?(miles: Int) {
+        if miles < 5000 {
+            return nil
+        }
+        self.miles = miles
+        
+    }
+    
+}
+
+let ambulance = Ambulance(sireOn: true, color: "red", speed: "slow")
+ambulance.sireOn
+ambulance.color
+ambulance.speed
+
+let amb = AmbulanceSecond(speed: "SuperFast", fuel: 75, color: "white")
+amb.color
+amb.speed
+amb.fuel
+
+let newCar = AmbulanceSecond(miles: 10000)
+let oddCar = AmbulanceSecond(miles: 2300)
+
+newCar
+oddCar
 
 
 
-
-
-
-
-
-/*: 
+/*:
  ### Answer
  */
 /*

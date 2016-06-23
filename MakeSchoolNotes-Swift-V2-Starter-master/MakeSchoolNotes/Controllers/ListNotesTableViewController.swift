@@ -46,6 +46,17 @@ class ListNotesTableViewController: UITableViewController {
         
     }
     
+    // Deleting the notes created
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        // select which editing style(delete)
+        if editingStyle == .Delete {
+            notes.removeAtIndex(indexPath.row)
+            tableView.reloadData()
+        }
+        
+    }
+    
     // Prepare for Segue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let identifier = segue.identifier {
@@ -69,6 +80,17 @@ class ListNotesTableViewController: UITableViewController {
             }
         }
     }
-    
-    
 }
+    //MARK Realm: How to modify objects
+    // try! realm.write() {
+     //   realm.add(chris)
+    //}
+
+    // How to update objects in realm
+    //try! realm.write() {
+    //    chris.age = 100
+    //}
+
+// Retrieving objects
+//let realm = try! Realm()
+//let people = realm.objects(Person)

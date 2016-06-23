@@ -146,6 +146,10 @@ print(smallCarSize.computeVolume())
 
 let bigCarSize = Size(length: 100, width: 30, height: 50)
 print(bigCarSize.computeVolume())
+
+
+
+
 /*:
 So far, it looks like we could have accomplished the same thing using a `class` instead of a `struct`. And in fact, we could have! Try replacing the keyword `struct` with `class` and see what happens. In Swift, classes and structs are very similar, but there are some important differences. For one, `struct`s have no inheritance - they cannot be a subclass or superclass of another `class` or `struct`. We don't expect `Size` to ever have any subclasses - it stands on its own, so we made it a `struct` instead of a `class`.
  */
@@ -243,6 +247,61 @@ someSize.height
  */
 // Write your challenge code here:
 
+//5
+
+struct Weather {
+    
+    var temperature: Double
+    var windSpeed: Double
+    var cloudPercentage: Float
+    var weatherDescription: String
+    
+}
+//2
+
+class Student {
+    // Properties: Name
+    var name: String?
+    // Properties: year
+    var classYear = 2006
+    // Properties: array
+    var students = [Student]()
+}
+
+
+enum ClassYear {
+    case Fresh, Soph, Junior, Senior
+    
+    class Student {
+        // Properties: name
+        var name = ""
+        // Properties: classyear
+        var classYear = ClassYear.Fresh
+    }
+}
+
+//3
+
+class Instructors {
+    
+    var name = ""
+    var subject = ""
+    
+    func startClass() {
+        print("\(subject) is now in session")
+    
+    }
+}
+
+//4
+class Coaches {
+    var sport: String?
+
+    func playSport() {
+        print("Lets play \(sport)")
+    
+    }
+}
 
 
 
