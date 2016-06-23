@@ -9,6 +9,13 @@
 import UIKit
 
 class ListNotesTableViewController: UITableViewController {
+
+    var notes = [Note]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
     
     @IBAction func unwindToListNotesViewController(segue: UIStoryboardSegue){
         
@@ -21,7 +28,7 @@ class ListNotesTableViewController: UITableViewController {
     
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return notes.count
         
     }
   
@@ -29,8 +36,11 @@ class ListNotesTableViewController: UITableViewController {
     
         let cell = tableView.dequeueReusableCellWithIdentifier("listNotesTableViewCell", forIndexPath: indexPath) as! ListNotesTableViewCell
         
-        cell.noteTitleLabel.text = "note's title"
-        cell.noteModificationTimeLabel.text = "note's modification time"
+        let row = indexPath.row
+        let note = notes[row]
+        
+        cell.noteTitleLabel.text = note.title
+        cell.noteModificationTimeLabel.text = note.modificationTime.convertToString()
         
         return cell
         
@@ -43,8 +53,19 @@ class ListNotesTableViewController: UITableViewController {
             if identifier == "displayNote" {
                 print("Table view cell tapped")
                 
+                //MARK: Determining the selected note
+                //1
+                let indexPath = tableView.indexPathForSelectedRow!
+                //2 Identifying each cell with the indexpath to retrieve the note from notes array.
+                let note = notes[indexPath.row]
+                //3 Getting access to the display note VC with segue
+                let displayNoteViewController = segue.destinationViewController as! DisplayNoteViewController
+                //4 Setting the note property
+                displayNoteViewController.note = note
+                
             } else if identifier == "addNote" {
                 print("+ button tapped")
+
             }
         }
     }
