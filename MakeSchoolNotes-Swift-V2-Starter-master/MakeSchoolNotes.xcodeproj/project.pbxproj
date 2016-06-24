@@ -16,6 +16,7 @@
 		2E4A07AF1C42F539007F415F /* NSDate+convertToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4A07AE1C42F539007F415F /* NSDate+convertToString.swift */; };
 		2E4A07B11C42F599007F415F /* ListNotesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4A07B01C42F599007F415F /* ListNotesTableViewCell.swift */; };
 		61FFC3291D1B8AE00067ED93 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FFC3281D1B8AE00067ED93 /* Note.swift */; };
+		61FFC32B1D1CA3DD0067ED93 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FFC32A1D1CA3DD0067ED93 /* RealmHelper.swift */; };
 		65BF36601D07D9D800CB1BB3 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65BF365E1D07D9D800CB1BB3 /* Realm.framework */; };
 		65BF36611D07D9D800CB1BB3 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 65BF365E1D07D9D800CB1BB3 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		65BF36621D07D9D800CB1BB3 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65BF365F1D07D9D800CB1BB3 /* RealmSwift.framework */; };
@@ -49,6 +50,7 @@
 		2E4A07AE1C42F539007F415F /* NSDate+convertToString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+convertToString.swift"; sourceTree = "<group>"; };
 		2E4A07B01C42F599007F415F /* ListNotesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListNotesTableViewCell.swift; sourceTree = "<group>"; };
 		61FFC3281D1B8AE00067ED93 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Note.swift; path = Models/Note.swift; sourceTree = "<group>"; };
+		61FFC32A1D1CA3DD0067ED93 /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 		65BF365E1D07D9D800CB1BB3 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Frameworks/Realm.framework; sourceTree = "<group>"; };
 		65BF365F1D07D9D800CB1BB3 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Frameworks/RealmSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,6 +132,7 @@
 		2E4A07AC1C42F4EB007F415F /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				61FFC32A1D1CA3DD0067ED93 /* RealmHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				2E4A07AF1C42F539007F415F /* NSDate+convertToString.swift in Sources */,
 				2E4A07AB1C42F497007F415F /* DisplayNoteViewController.swift in Sources */,
 				2E4A07941C42F3B0007F415F /* AppDelegate.swift in Sources */,
+				61FFC32B1D1CA3DD0067ED93 /* RealmHelper.swift in Sources */,
 				2E4A07A91C42F40B007F415F /* ListNotesTableViewController.swift in Sources */,
 				61FFC3291D1B8AE00067ED93 /* Note.swift in Sources */,
 			);

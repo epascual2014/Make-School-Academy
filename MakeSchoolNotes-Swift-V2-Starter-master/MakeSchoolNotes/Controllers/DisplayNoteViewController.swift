@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class DisplayNoteViewController: UIViewController {
 
@@ -26,25 +27,24 @@ class DisplayNoteViewController: UIViewController {
         if segue.identifier == "Save" {
             // Instance of Note class
             if let note = note {
-                //1
-                note.title = noteTitleTextField.text ?? ""
-                note.content = noteContentTextView.text ?? ""
-                
-                listNotesTableViewController.tableView.reloadData()
-                
-            } else {
-                
+                // if note exists, update title and content
                 let newNote = Note()
-                // 2
                 newNote.title = noteTitleTextField.text ?? ""
                 newNote.content = noteContentTextView.text ?? ""
-                // 3
-                newNote.modificationTime = NSDate()
-            
-                // append New Notes
-                listNotesTableViewController.notes.append(newNote)
+                RealmHelper.updateNote(note, newNote: newNote)
                 
+            } else {
+                // if note doesnt exist, create new note
+                let note = Note()
+                note.title = noteTitleTextField.text ?? ""
+                note.content = noteContentTextView.text ?? ""
+                note.modificationTime = NSDate()
+                
+                //new note added to realm
+                RealmHelper.addNote(note)
             }
+            // Updating the listnotes VC
+            listNotesTableViewController.notes = RealmHelper.retrieveNotes()
         }
     }
     
