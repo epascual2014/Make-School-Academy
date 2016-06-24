@@ -25,6 +25,7 @@ class ListNotesTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Retreiving notes for Realm
         notes = RealmHelper.retrieveNotes()
     }
@@ -43,6 +44,8 @@ class ListNotesTableViewController: UITableViewController {
         let note = notes[row]
         
         cell.noteTitleLabel.text = note.title
+        // Cell previews part of the notes.
+        cell.notePreview.text = note.content
         cell.noteModificationTimeLabel.text = note.modificationTime.convertToString()
         
         return cell
@@ -54,11 +57,13 @@ class ListNotesTableViewController: UITableViewController {
         
         // select which editing style(delete)
         if editingStyle == .Delete {
+            
             // Deleting notes in realm
             RealmHelper.deleteNote(notes[indexPath.row])
             // Updating the notes in realm
             notes = RealmHelper.retrieveNotes()
         }
+        
         
     }
     
@@ -74,6 +79,9 @@ class ListNotesTableViewController: UITableViewController {
                 let indexPath = tableView.indexPathForSelectedRow!
                 //2 Identifying each cell with the indexpath to retrieve the note from notes array.
                 let note = notes[indexPath.row]
+                print(notes)
+                
+                
                 //3 Getting access to the display note VC with segue
                 let displayNoteViewController = segue.destinationViewController as! DisplayNoteViewController
                 //4 Setting the note property
