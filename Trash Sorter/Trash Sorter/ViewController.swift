@@ -11,11 +11,20 @@ import UIKit
 class ViewController: UIViewController {
 
 
+    var garbageRecyleArray = [String?]()
+    var garbageTrashArray = [String?]()
+    var garbageCompostArray = [String?]()
+    
     @IBOutlet weak var enterItemTextField: UITextField!
 
     @IBOutlet weak var trashSelector: UISegmentedControl!
     
-    @IBOutlet weak var saveItemButton: UIButton!
+    @IBAction func saveItemButton(sender: AnyObject) {
+        
+        
+    }
+    
+    
     
     
     override func viewDidLoad() {

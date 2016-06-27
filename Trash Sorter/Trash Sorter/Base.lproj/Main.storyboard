@@ -17,13 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GGK-Ih-dBt">
-                                <rect key="frame" x="216" y="101" width="169" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="TwF-Td-AiU">
-                                <rect key="frame" x="161" y="149" width="278" height="29"/>
+                                <rect key="frame" x="49" y="154" width="278" height="29"/>
                                 <segments>
                                     <segment title="Recycleable"/>
                                     <segment title="Trash"/>
@@ -31,33 +26,44 @@
                                 </segments>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zi5-0m-bR5">
-                                <rect key="frame" x="256" y="202" width="94" height="30"/>
+                                <rect key="frame" x="144" y="207" width="94" height="30"/>
                                 <color key="backgroundColor" red="0.11372549019607843" green="0.42745098039215684" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <state key="normal" title="DISCARD">
                                     <color key="titleColor" red="0.99617832899093628" green="0.98826521635055542" blue="0.98802465200424194" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveItemButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Edw-jT-i0T"/>
+                                </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GGK-Ih-dBt">
+                                <rect key="frame" x="94" y="106" width="169" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Trash Sorter" id="aeo-A0-PZm">
-                        <barButtonItem key="rightBarButtonItem" title="LIST" id="aQG-4e-h9r"/>
+                        <barButtonItem key="rightBarButtonItem" title="LIST" id="aQG-4e-h9r">
+                            <connections>
+                                <segue destination="XQg-wk-ugl" kind="show" identifier="mainMenuIdentifier" id="919-U8-tVS"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="enterItemTextField" destination="GGK-Ih-dBt" id="CIF-x7-pQx"/>
-                        <outlet property="saveItemButton" destination="Zi5-0m-bR5" id="waZ-GI-hL0"/>
                         <outlet property="trashSelector" destination="TwF-Td-AiU" id="TsX-8U-JUC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1084" y="-355"/>
+            <point key="canvasLocation" x="1065" y="-405"/>
         </scene>
-        <!--Menu Table View Controller-->
+        <!--Menu View Controller-->
         <scene sceneID="oFY-VK-Wre">
             <objects>
-                <viewController id="XQg-wk-ugl" customClass="MenuTableViewController" customModule="Trash_Sorter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XQg-wk-ugl" customClass="MenuViewController" customModule="Trash_Sorter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yEe-kO-paY"/>
                         <viewControllerLayoutGuide type="bottom" id="Ov1-7n-LVe"/>
@@ -94,7 +100,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k1I-Yh-wjB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1748" y="-355"/>
+            <point key="canvasLocation" x="1754" y="-405"/>
         </scene>
         <!--Recycle Table View Controller-->
         <scene sceneID="JV4-1w-2jD">
@@ -133,7 +139,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KFV-8D-DtW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1084" y="330"/>
+            <point key="canvasLocation" x="1078" y="400"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uYK-KQ-8Be">
@@ -151,7 +157,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J8m-8P-Cns" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="405" y="-355"/>
+            <point key="canvasLocation" x="343" y="-411"/>
         </scene>
     </scenes>
 </document>

@@ -44,6 +44,7 @@ class ListNotesTableViewController: UITableViewController {
         let note = notes[row]
         
         cell.noteTitleLabel.text = note.title
+        
         // Cell previews part of the notes.
         cell.notePreview.text = note.content
         cell.noteModificationTimeLabel.text = note.modificationTime.convertToString()

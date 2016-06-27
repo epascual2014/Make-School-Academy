@@ -10,7 +10,7 @@ import UIKit
 
 class RecycleTableViewController: UITableViewController {
     
-    var garbageArray = [GarbageItems]()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,15 +36,15 @@ class RecycleTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return garbageArray.count
+        return 0
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
         
-        let row = indexPath.row
-        let garbage = garbageArray[row]
+        //let row = indexPath.row
+        //let garbage = garbageArray[row]
         
         //cell.garbageNameLabel = garbage.garbageName
 
