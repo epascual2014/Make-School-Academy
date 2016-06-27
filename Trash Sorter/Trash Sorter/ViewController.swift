@@ -11,16 +11,28 @@ import UIKit
 class ViewController: UIViewController {
 
 
-    var garbageRecyleArray = [String?]()
-    var garbageTrashArray = [String?]()
-    var garbageCompostArray = [String?]()
+    var recycleItems = [String?]()
+    var trashItems = [String?]()
+    var compostItems = [String?]()
     
     @IBOutlet weak var enterItemTextField: UITextField!
 
     @IBOutlet weak var trashSelector: UISegmentedControl!
     
     @IBAction func saveItemButton(sender: AnyObject) {
-        
+        if let trashItem = enterItemTextField.text {
+            
+            switch trashSelector.selectedSegmentIndex {
+                case 0:
+                    recycleItems.append(trashItem)
+                case 1:
+                    trashItems.append(trashItem)
+                case 2:
+                    compostItems.append(trashItem)
+            default:
+                break
+            }
+        }
         
     }
     
@@ -36,5 +48,10 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    
+    
 }
+
 

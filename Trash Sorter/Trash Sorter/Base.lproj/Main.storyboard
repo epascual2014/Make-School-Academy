@@ -47,7 +47,7 @@
                     <navigationItem key="navigationItem" title="Trash Sorter" id="aeo-A0-PZm">
                         <barButtonItem key="rightBarButtonItem" title="LIST" id="aQG-4e-h9r">
                             <connections>
-                                <segue destination="XQg-wk-ugl" kind="show" identifier="mainMenuIdentifier" id="919-U8-tVS"/>
+                                <segue destination="DOG-VO-pwP" kind="show" identifier="mainMenuIdentifier" id="2Er-pO-iSz"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -60,48 +60,6 @@
             </objects>
             <point key="canvasLocation" x="1065" y="-405"/>
         </scene>
-        <!--Menu View Controller-->
-        <scene sceneID="oFY-VK-Wre">
-            <objects>
-                <viewController id="XQg-wk-ugl" customClass="MenuViewController" customModule="Trash_Sorter" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="yEe-kO-paY"/>
-                        <viewControllerLayoutGuide type="bottom" id="Ov1-7n-LVe"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="qlK-zg-MjF">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RIU-io-qvd">
-                                <rect key="frame" x="96" y="120" width="132" height="30"/>
-                                <color key="backgroundColor" red="0.033440787345170975" green="0.5596807599067688" blue="0.94999879598617554" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                <state key="normal" title="RECYCLABLE">
-                                    <color key="titleColor" red="0.99607473611831665" green="0.99220293760299683" blue="0.99199241399765015" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1gf-Rc-9jQ">
-                                <rect key="frame" x="96" y="158" width="132" height="30"/>
-                                <color key="backgroundColor" red="0.046689465641975403" green="0.04487638920545578" blue="0.1237461194396019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="TRASH">
-                                    <color key="titleColor" red="0.99607473611831665" green="0.99220293760299683" blue="0.99199241399765015" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j1J-JF-EYQ">
-                                <rect key="frame" x="96" y="196" width="132" height="30"/>
-                                <color key="backgroundColor" red="0.094300605356693268" green="0.49477940797805786" blue="0.14714434742927551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="COMPOSTABLE">
-                                    <color key="titleColor" red="0.99237209558486938" green="0.98047834634780884" blue="0.97605174779891968" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="k1I-Yh-wjB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1754" y="-405"/>
-        </scene>
         <!--Recycle Table View Controller-->
         <scene sceneID="JV4-1w-2jD">
             <objects>
@@ -110,9 +68,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="lnC-O2-Rwh">
+                            <rect key="frame" x="0.0" y="136" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <items>
+                                <barButtonItem title="Recyleables" id="Ism-Pb-btG"/>
+                                <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="uQk-Mx-J2a"/>
+                                <barButtonItem title="Trash" id="WOu-yz-i5r"/>
+                                <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="ADM-Bk-YPA"/>
+                                <barButtonItem title="Composts" id="CCN-MG-e0Q"/>
+                            </items>
+                        </toolbar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="VXJ-WZ-kCI" customClass="RecycleTableViewCell" customModule="Trash_Sorter" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VXJ-WZ-kCI" id="aqI-Lb-L8S">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -139,7 +108,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KFV-8D-DtW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1078" y="400"/>
+            <point key="canvasLocation" x="1760" y="-405"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uYK-KQ-8Be">
