@@ -16,6 +16,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Set up the Parse SDK
+        let configuration = ParseClientConfiguration {
+            $0.applicationId = "summermakestagramep"
+            $0.server = "https://summer-ms-parse-epascual.herokuapp.com/parse"
+        }
+        Parse.initilizeWithConfiguration(configuration)
+        
+        do {
+            try PFUser.logInWithUsername("testUser", password: "test")
+        } catch {
+            print("Unable to log in")
+        }
+        
+        if let currentUser = PFUser.currentUser() {
+            print("\(current.usernam!) logged in successfully")
+        } else {
+            print ("No logged in user :(")
+        }
 
         return true
     }
