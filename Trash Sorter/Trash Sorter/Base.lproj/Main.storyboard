@@ -60,44 +60,31 @@
             </objects>
             <point key="canvasLocation" x="1065" y="-405"/>
         </scene>
-        <!--Recycle Table View Controller-->
+        <!--Garbage Menu Table View Controller-->
         <scene sceneID="JV4-1w-2jD">
             <objects>
-                <tableViewController id="DOG-VO-pwP" customClass="RecycleTableViewController" customModule="Trash_Sorter" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="DOG-VO-pwP" customClass="GarbageMenuTableViewController" customModule="Trash_Sorter" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ZT2-Vt-UwN">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="lnC-O2-Rwh">
-                            <rect key="frame" x="0.0" y="136" width="600" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                            <items>
-                                <barButtonItem title="Recyleables" id="Ism-Pb-btG"/>
-                                <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="uQk-Mx-J2a"/>
-                                <barButtonItem title="Trash" id="WOu-yz-i5r"/>
-                                <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="ADM-Bk-YPA"/>
-                                <barButtonItem title="Composts" id="CCN-MG-e0Q"/>
-                            </items>
-                        </toolbar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="VXJ-WZ-kCI" customClass="RecycleTableViewCell" customModule="Trash_Sorter" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="eOt-od-uf2" style="IBUITableViewCellStyleDefault" id="VXJ-WZ-kCI" customClass="RecycleTableViewCell" customModule="Trash_Sorter" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VXJ-WZ-kCI" id="aqI-Lb-L8S">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JFH-4c-8De">
-                                            <rect key="frame" x="17" y="11" width="125" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eOt-od-uf2">
+                                            <rect key="frame" x="15" y="0.0" width="570" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="garbageNameLabel" destination="JFH-4c-8De" id="eyd-td-CPQ"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -105,10 +92,43 @@
                             <outlet property="delegate" destination="DOG-VO-pwP" id="TTD-Nc-Euz"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="lW4-TC-nUM">
+                        <view key="titleView" contentMode="scaleToFill" id="XBP-2B-4G2">
+                            <rect key="frame" x="164" y="5.5" width="272" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qdu-nK-jVm">
+                                    <rect key="frame" x="0.0" y="0.0" width="76" height="30"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <state key="normal" title="RECYCLED"/>
+                                    <connections>
+                                        <action selector="selectedItems:" destination="DOG-VO-pwP" eventType="touchUpInside" id="GRh-x6-M3L"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yi6-iS-Nyv">
+                                    <rect key="frame" x="91" y="0.0" width="69" height="30"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <state key="normal" title="TRASHED"/>
+                                    <connections>
+                                        <action selector="selectedItems:" destination="DOG-VO-pwP" eventType="touchUpInside" id="SAG-8G-WUp"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhD-1c-mQJ">
+                                    <rect key="frame" x="162" y="0.0" width="110" height="30"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <state key="normal" title="COMPOSTABLE"/>
+                                    <connections>
+                                        <action selector="selectedItems:" destination="DOG-VO-pwP" eventType="touchUpInside" id="8KE-ob-lbE"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KFV-8D-DtW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1760" y="-405"/>
+            <point key="canvasLocation" x="1840" y="-421"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uYK-KQ-8Be">

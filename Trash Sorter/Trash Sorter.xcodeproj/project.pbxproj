@@ -12,9 +12,7 @@
 		61E73AE41D20AC4A00629CF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61E73AE21D20AC4A00629CF1 /* Main.storyboard */; };
 		61E73AE61D20AC4A00629CF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61E73AE51D20AC4A00629CF1 /* Assets.xcassets */; };
 		61E73AE91D20AC4A00629CF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61E73AE71D20AC4A00629CF1 /* LaunchScreen.storyboard */; };
-		61E73AF11D20AD7A00629CF1 /* RecycleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E73AF01D20AD7A00629CF1 /* RecycleTableViewController.swift */; };
-		61E73AF91D20F2BD00629CF1 /* RecycleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E73AF81D20F2BD00629CF1 /* RecycleTableViewCell.swift */; };
-		61E73AFB1D2197F500629CF1 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E73AFA1D2197F500629CF1 /* MenuViewController.swift */; };
+		61E73B011D21A67800629CF1 /* GarbageMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E73B001D21A67800629CF1 /* GarbageMenuTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,9 +23,7 @@
 		61E73AE51D20AC4A00629CF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		61E73AE81D20AC4A00629CF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		61E73AEA1D20AC4A00629CF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		61E73AF01D20AD7A00629CF1 /* RecycleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecycleTableViewController.swift; sourceTree = "<group>"; };
-		61E73AF81D20F2BD00629CF1 /* RecycleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecycleTableViewCell.swift; sourceTree = "<group>"; };
-		61E73AFA1D2197F500629CF1 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		61E73B001D21A67800629CF1 /* GarbageMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GarbageMenuTableViewController.swift; path = ../GarbageMenuTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,7 +40,6 @@
 		61E73AD21D20AC4A00629CF1 = {
 			isa = PBXGroup;
 			children = (
-				61E73AFA1D2197F500629CF1 /* MenuViewController.swift */,
 				61E73ADD1D20AC4A00629CF1 /* Trash Sorter */,
 				61E73ADC1D20AC4A00629CF1 /* Products */,
 			);
@@ -63,9 +58,8 @@
 			children = (
 				61E73ADE1D20AC4A00629CF1 /* AppDelegate.swift */,
 				61E73AE01D20AC4A00629CF1 /* ViewController.swift */,
+				61E73B001D21A67800629CF1 /* GarbageMenuTableViewController.swift */,
 				61E73AE21D20AC4A00629CF1 /* Main.storyboard */,
-				61E73AF01D20AD7A00629CF1 /* RecycleTableViewController.swift */,
-				61E73AF81D20F2BD00629CF1 /* RecycleTableViewCell.swift */,
 				61E73AE51D20AC4A00629CF1 /* Assets.xcassets */,
 				61E73AE71D20AC4A00629CF1 /* LaunchScreen.storyboard */,
 				61E73AEA1D20AC4A00629CF1 /* Info.plist */,
@@ -144,10 +138,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61E73AF11D20AD7A00629CF1 /* RecycleTableViewController.swift in Sources */,
-				61E73AFB1D2197F500629CF1 /* MenuViewController.swift in Sources */,
+				61E73B011D21A67800629CF1 /* GarbageMenuTableViewController.swift in Sources */,
 				61E73AE11D20AC4A00629CF1 /* ViewController.swift in Sources */,
-				61E73AF91D20F2BD00629CF1 /* RecycleTableViewCell.swift in Sources */,
 				61E73ADF1D20AC4A00629CF1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,28 +11,31 @@ import UIKit
 class ViewController: UIViewController {
 
 
-    var recycleItems = [String?]()
-    var trashItems = [String?]()
-    var compostItems = [String?]()
+    var recycledItems = [String?]()
+    var trashedItems = [String?]()
+    var compostedItems = [String?]()
     
     @IBOutlet weak var enterItemTextField: UITextField!
 
     @IBOutlet weak var trashSelector: UISegmentedControl!
     
     @IBAction func saveItemButton(sender: AnyObject) {
-        if let trashItem = enterItemTextField.text {
+        
+        if ((enterItemTextField.text?.validateEntry()) != nil) {
             
             switch trashSelector.selectedSegmentIndex {
                 case 0:
-                    recycleItems.append(trashItem)
+                    recycledItems.append(enterItemTextField.text!)
                 case 1:
-                    trashItems.append(trashItem)
+                    trashedItems.append(enterItemTextField.text!)
                 case 2:
-                    compostItems.append(trashItem)
+                    compostedItems.append(enterItemTextField.text!)
             default:
                 break
             }
         }
+        enterItemTextField.text = ""
+        print(recycledItems, trashedItems, compostedItems)
         
     }
     
@@ -41,7 +44,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -49,9 +52,28 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "mainMenuIdentifier" {
+            if let garbageMenuTableViewController = segue.destinationViewController as? GarbageMenuTableViewController {
+                garbageMenuTableViewController.recycledItems = recycledItems
+                garbageMenuTableViewController.trashedItems = trashedItems
+                garbageMenuTableViewController.compostedItems = compostedItems
+                
+            }
+        }
+    }
     
     
     
 }
 
+extension String {
+    func validateEntry() -> Bool {
+        if self == "" || self.isEmpty {
+            return false
+        } else {
+            return true
+        }
+    }
+}
 
