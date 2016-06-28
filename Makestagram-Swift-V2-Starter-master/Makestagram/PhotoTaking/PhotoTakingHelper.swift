@@ -27,6 +27,14 @@ class PhotoTakingHelper: NSObject {
         showPhotoSourceSelection()
     }
     
+    // Implementing photo taking method
+    func showImagePickerController(sourceType: UIImagePickerControllerSourceType) {
+        imagePickerController = UIImagePickerController()
+        imagePickerController!.sourceType = sourceType
+        self.viewController.presentViewController(imagePickerController!, animated: true, completion: nil)
+        
+    }
+    
     // MARK: Implementing the photo source selection popover
     func showPhotoSourceSelection () {
         
@@ -44,10 +52,19 @@ class PhotoTakingHelper: NSObject {
         // Only show camera option if rear camera is available
         if (UIImagePickerController.isCameraDeviceAvailable(.Rear)) {
             let cameraAction = UIAlertAction(title: "Photo from Camera", style: .Default) { (action) in
-        }
+                self.showImagePickerController(.Camera)
+            }
     
             alertController.addAction(cameraAction)
+            
         }
+        
+        let photoLibraryAction = UIAlertAction(title: "Photo from Library", style: .Default) { (action) in
+            self.showImagePickerController(.PhotoLibrary)
+        }
+        
         viewController.presentViewController(alertController, animated: true, completion: nil)
+        
+        }
     }
-}
+
