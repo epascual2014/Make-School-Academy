@@ -62,9 +62,6 @@ class ViewController: UIViewController {
             }
         }
     }
-    
-    
-    
 }
 
 extension String {

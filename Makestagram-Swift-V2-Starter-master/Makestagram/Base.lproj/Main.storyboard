@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Time Line View Controller-->
+        <!--Timeline View Controller-->
         <scene sceneID="E5y-LI-eab">
             <objects>
-                <viewController id="z07-fn-RRr" customClass="TimeLineViewController" customModule="Makestagram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="z07-fn-RRr" customClass="TimelineViewController" customModule="Makestagram" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cC6-vf-HRf"/>
                         <viewControllerLayoutGuide type="bottom" id="BWD-W3-ecW"/>
