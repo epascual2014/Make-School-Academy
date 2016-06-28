@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,7 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             $0.applicationId = "summermakestagramep"
             $0.server = "https://summer-ms-parse-epascual.herokuapp.com/parse"
         }
-        Parse.initilizeWithConfiguration(configuration)
+        
+        Parse.initializeWithConfiguration(configuration)
         
         do {
             try PFUser.logInWithUsername("testUser", password: "test")
@@ -31,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         if let currentUser = PFUser.currentUser() {
-            print("\(current.usernam!) logged in successfully")
+            print("\(currentUser.username!) logged in successfully")
         } else {
             print ("No logged in user :(")
         }
