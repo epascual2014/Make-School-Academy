@@ -12,6 +12,7 @@
 		619F82E51D22358B0022E4AC /* FriendSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619F82E41D22358B0022E4AC /* FriendSearchViewController.swift */; };
 		619F82E71D223BD50022E4AC /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619F82E61D223BD50022E4AC /* TimelineViewController.swift */; };
 		619F82EA1D22417F0022E4AC /* PhotoTakingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619F82E91D22417F0022E4AC /* PhotoTakingHelper.swift */; };
+		619F82ED1D22EABA0022E4AC /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619F82EC1D22EABA0022E4AC /* Post.swift */; };
 		62551B961B06C2F5000913E4 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62551B951B06C2F5000913E4 /* Social.framework */; };
 		62551B981B06C2FD000913E4 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62551B971B06C2FD000913E4 /* Accounts.framework */; };
 		62551B9A1B06C31F000913E4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62551B991B06C31F000913E4 /* CoreLocation.framework */; };
@@ -68,6 +69,7 @@
 		619F82E41D22358B0022E4AC /* FriendSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendSearchViewController.swift; sourceTree = "<group>"; };
 		619F82E61D223BD50022E4AC /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		619F82E91D22417F0022E4AC /* PhotoTakingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoTakingHelper.swift; sourceTree = "<group>"; };
+		619F82EC1D22EABA0022E4AC /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		62551B951B06C2F5000913E4 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		62551B971B06C2FD000913E4 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		62551B991B06C31F000913E4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -149,6 +151,15 @@
 				619F82E91D22417F0022E4AC /* PhotoTakingHelper.swift */,
 			);
 			path = PhotoTaking;
+			sourceTree = "<group>";
+		};
+		619F82EB1D22EA8A0022E4AC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				619F82EC1D22EABA0022E4AC /* Post.swift */,
+			);
+			name = Models;
+			path = ViewControllers/Models;
 			sourceTree = "<group>";
 		};
 		62551B621B06BF33000913E4 /* Frameworks */ = {
@@ -235,6 +246,7 @@
 		62C8C1E21B06BD6500DC3EA7 /* Makestagram */ = {
 			isa = PBXGroup;
 			children = (
+				619F82EB1D22EA8A0022E4AC /* Models */,
 				619F82E81D2241400022E4AC /* PhotoTaking */,
 				6277189C1B0A58E800AF5C6E /* Helpers */,
 				627718811B0A581600AF5C6E /* ViewControllers */,
@@ -482,6 +494,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				627718901B0A581600AF5C6E /* Filter.swift in Sources */,
+				619F82ED1D22EABA0022E4AC /* Post.swift in Sources */,
 				619F82E51D22358B0022E4AC /* FriendSearchViewController.swift in Sources */,
 				627718A01B0A58E800AF5C6E /* ParseLoginHelper.swift in Sources */,
 				627718911B0A581700AF5C6E /* FilterCollectionViewCell.swift in Sources */,

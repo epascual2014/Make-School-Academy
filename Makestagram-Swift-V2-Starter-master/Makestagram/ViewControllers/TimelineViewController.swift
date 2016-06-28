@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 var photoTakingHelper: PhotoTakingHelper?
 
@@ -17,6 +18,8 @@ class TimelineViewController: UIViewController {
 
         self.tabBarController?.delegate = self
     }
+    
+    
 }
 
 // MARK: Tab Bar Delegate
@@ -38,6 +41,24 @@ extension TimelineViewController: UITabBarControllerDelegate {
         // Instantiate photo taking class, provide callback for when photo is selected
         photoTakingHelper = PhotoTakingHelper(viewController: self.tabBarController!) { (image: UIImage?) in
             print("received a callback")
+            
+            if let image = image {
+                
+                // mandatory image quality between 0.0 to 1.0
+                let imageData = UIImageJPEGRepresentation(image, 0.8)!
+                
+                // Turn image into NSData and name it. 
+                // .jpg makes it easier to look on uploaded photos
+                let imageFile = PFFile(name: "image.jpg", data: imageData)!
+                
+                // Assign imageFile to the class "post" related in Parse.
+                let post = PFObject(className: "Post")
+                post["imageFile"] = imageFile
+                post.saveInBackground()
+                
+                print("image posted and saved in parse")
+                
+            }
         
         }
     }
