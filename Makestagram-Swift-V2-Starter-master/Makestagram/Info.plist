@@ -2,6 +2,20 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>summer-ms-parse-epascual.herokuapp.com</key>
+			<string></string>
+			<key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+			<string></string>
+			<key>NSThirdPartyExceptionAllowsInsecureHTTPLoads</key>
+			<string></string>
+			<key>NSIncludesSubdomains</key>
+			<string></string>
+		</dict>
+	</dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>

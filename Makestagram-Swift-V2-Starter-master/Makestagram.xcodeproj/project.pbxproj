@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1886ADF00FBFDA9F1BC87E94 /* Pods_Makestagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C43FA368AEF6F44F6F48187C /* Pods_Makestagram.framework */; };
+		614D94B21D23AEF400EA516F /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614D94B11D23AEF400EA516F /* PostTableViewCell.swift */; };
 		619F82E31D2235750022E4AC /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619F82E21D2235750022E4AC /* PhotoViewController.swift */; };
 		619F82E51D22358B0022E4AC /* FriendSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619F82E41D22358B0022E4AC /* FriendSearchViewController.swift */; };
 		619F82E71D223BD50022E4AC /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619F82E61D223BD50022E4AC /* TimelineViewController.swift */; };
@@ -65,6 +66,7 @@
 
 /* Begin PBXFileReference section */
 		4ACD349E08AC3940978DB603 /* Pods_MakestagramTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MakestagramTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		614D94B11D23AEF400EA516F /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		619F82E21D2235750022E4AC /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		619F82E41D22358B0022E4AC /* FriendSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendSearchViewController.swift; sourceTree = "<group>"; };
 		619F82E61D223BD50022E4AC /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +145,14 @@
 				B58128AD72C6FDF7CC38C233 /* Pods-MakestagramTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		614D94B01D23AEC400EA516F /* Timeline */ = {
+			isa = PBXGroup;
+			children = (
+				614D94B11D23AEF400EA516F /* PostTableViewCell.swift */,
+			);
+			path = Timeline;
 			sourceTree = "<group>";
 		};
 		619F82E81D2241400022E4AC /* PhotoTaking */ = {
@@ -252,6 +262,7 @@
 				627718811B0A581600AF5C6E /* ViewControllers */,
 				62C8C1E51B06BD6500DC3EA7 /* AppDelegate.swift */,
 				62C8C1E91B06BD6500DC3EA7 /* Main.storyboard */,
+				614D94B01D23AEC400EA516F /* Timeline */,
 				62C8C1EC1B06BD6500DC3EA7 /* Images.xcassets */,
 				62C8C1EE1B06BD6500DC3EA7 /* LaunchScreen.xib */,
 				62C8C1E31B06BD6500DC3EA7 /* Supporting Files */,
@@ -504,6 +515,7 @@
 				619F82E31D2235750022E4AC /* PhotoViewController.swift in Sources */,
 				62C8C1E61B06BD6500DC3EA7 /* AppDelegate.swift in Sources */,
 				627718971B0A581700AF5C6E /* FilterViewController.swift in Sources */,
+				614D94B21D23AEF400EA516F /* PostTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
