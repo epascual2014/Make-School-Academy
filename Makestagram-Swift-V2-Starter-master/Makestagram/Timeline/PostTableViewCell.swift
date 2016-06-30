@@ -13,10 +13,8 @@ import Parse
 class PostTableViewCell: UITableViewCell {
 
     @IBOutlet weak var postImageView: UIImageView!
-    
     @IBOutlet weak var likeIconImageView: UIImageView!
     @IBOutlet weak var likesLabel: UILabel!
-   
     @IBOutlet weak var moreButton: UIButton!
     @IBOutlet weak var likeButton: UIButton!
     
@@ -24,9 +22,12 @@ class PostTableViewCell: UITableViewCell {
         post?.toggleLikePost(PFUser.currentUser()!)
         
     }
+    
     @IBAction func moreButtonTapped(sender: AnyObject) {
         
     }
+    
+    
     var post: Post? {
 
         didSet {

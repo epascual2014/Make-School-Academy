@@ -9,6 +9,8 @@
 import UIKit
 import ConvenienceKit
 
+
+
 /**
   This struct provides basic Error handling functionality.
 */
