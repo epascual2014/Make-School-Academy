@@ -76,6 +76,7 @@ extension TimelineViewController: UITabBarControllerDelegate, UITableViewDataSou
         
         let post = posts[indexPath.row]
         post.downloadImage()
+        post.fetchLikes()
         cell.post = post
         
         return cell
