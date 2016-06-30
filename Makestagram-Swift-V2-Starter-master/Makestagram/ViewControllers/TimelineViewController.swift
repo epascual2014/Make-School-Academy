@@ -8,13 +8,16 @@
 
 import UIKit
 import Parse
+import ConvenienceKit
 
 var photoTakingHelper: PhotoTakingHelper?
 
-class TimelineViewController: UIViewController {
+class TimelineViewController: UIViewController, TimelineComponentTarget {
 
     
     var posts: [Post] = []
+    let defaultRange = 0...4
+    let additionalRangeSize = 5
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -27,13 +30,7 @@ class TimelineViewController: UIViewController {
     override func viewDidAppear(animated: Bool){
         super.viewDidAppear(animated)
         
-        ParseHelper.timelineRequestForCurrentUser {
-            (result: [PFObject]?, error: NSError?) -> Void in
-            
-            // Received all posts in an array.
-            self.posts = result as? [Post] ?? []
-            
-            self.tableView.reloadData()
+        timelineComponent.loadInitialIfRequired()
         }
     }
     

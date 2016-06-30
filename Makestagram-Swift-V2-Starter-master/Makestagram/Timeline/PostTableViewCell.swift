@@ -27,15 +27,44 @@ class PostTableViewCell: UITableViewCell {
         
     }
     
+    var postDisposable: DisposableType?
+    var likeDisposable: DisposableType?
     
     var post: Post? {
 
         didSet {
+            
+            postDisposable?.dispose()
+            likeDisposable?.dispose()
             if let post = post {
+                
                 // bind the image of the post to the "postImage" view
-                post.image.bindTo(postImageView.bnd_image)
+                postDisposable = post.image.bindTo(postImageView.bnd_image)
+                likeDisposable = post.likes.observe { (value: [PFUser]?) -> Void in
+                    if let actualValue = value {
+                        self.likesLabel.text = self.stringFromUserList(actualValue)
+                        self.likeButton.selected = actualValue.contains(PFUser.currentUser()!)
+                        self.likeIconImageView.hidden = (actualValue.count == 0)
+                        
+                    } else {
+                        self.likesLabel.text = ""
+                        self.likeButton.selected = false
+                        self.likeIconImageView.hidden = true
+                    }
+                }
+                
             }
         }
+    }
+
+    
+    func stringFromUserList(userList: [PFUser]) -> String {
+        let usernameList = userList.map {
+            user in user.username!
+        }
+        let commaSeparatedUserList = usernameList.joinWithSeparator(",")
+        
+        return commaSeparatedUserList
     }
     
     override func awakeFromNib() {
