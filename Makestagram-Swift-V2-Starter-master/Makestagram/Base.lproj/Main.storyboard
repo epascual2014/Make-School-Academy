@@ -34,7 +34,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="postImageView" destination="WYb-jn-SiQ" id="hcY-ZP-BqT"/>
+                                            <outlet property="postImageView" destination="WYb-jn-SiQ" id="QtF-CS-1Rk"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

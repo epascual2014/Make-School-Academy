@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1886ADF00FBFDA9F1BC87E94 /* Pods_Makestagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C43FA368AEF6F44F6F48187C /* Pods_Makestagram.framework */; };
+		613402571D246103008DBE9B /* ParseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613402561D246103008DBE9B /* ParseHelper.swift */; };
 		614D94B21D23AEF400EA516F /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614D94B11D23AEF400EA516F /* PostTableViewCell.swift */; };
 		619F82E31D2235750022E4AC /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619F82E21D2235750022E4AC /* PhotoViewController.swift */; };
 		619F82E51D22358B0022E4AC /* FriendSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619F82E41D22358B0022E4AC /* FriendSearchViewController.swift */; };
@@ -66,6 +67,7 @@
 
 /* Begin PBXFileReference section */
 		4ACD349E08AC3940978DB603 /* Pods_MakestagramTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MakestagramTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		613402561D246103008DBE9B /* ParseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseHelper.swift; sourceTree = "<group>"; };
 		614D94B11D23AEF400EA516F /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		619F82E21D2235750022E4AC /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		619F82E41D22358B0022E4AC /* FriendSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendSearchViewController.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 			children = (
 				6277189D1B0A58E800AF5C6E /* ErrorHandling.swift */,
 				6277189E1B0A58E800AF5C6E /* ParseLoginHelper.swift */,
+				613402561D246103008DBE9B /* ParseHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -515,6 +518,7 @@
 				619F82E31D2235750022E4AC /* PhotoViewController.swift in Sources */,
 				62C8C1E61B06BD6500DC3EA7 /* AppDelegate.swift in Sources */,
 				627718971B0A581700AF5C6E /* FilterViewController.swift in Sources */,
+				613402571D246103008DBE9B /* ParseHelper.swift in Sources */,
 				614D94B21D23AEF400EA516F /* PostTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
