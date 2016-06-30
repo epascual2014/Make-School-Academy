@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Delegates" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,54 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lGf-Gv-Lwb">
+                                <rect key="frame" x="20" y="62" width="560" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="mSy-W9-jbc"/>
+                                    <outlet property="delegate" destination="8bC-Xf-vdC" id="K5N-RW-H0n"/>
+                                </connections>
+                            </pickerView>
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kz2-K7-iRm">
+                                <rect key="frame" x="20" y="266" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="TfP-to-33t"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WPP-mc-u0u">
+                                <rect key="frame" x="20" y="321" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="fa7-Dg-zU4"/>
+                                </connections>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Kz2-K7-iRm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="2Nh-5M-ZP8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WPP-mc-u0u" secondAttribute="trailing" id="36r-HG-iAH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lGf-Gv-Lwb" secondAttribute="trailing" id="G6E-N3-MU9"/>
+                            <constraint firstItem="WPP-mc-u0u" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="f2u-F3-rTX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Kz2-K7-iRm" secondAttribute="trailing" id="fLt-m9-Rww"/>
+                            <constraint firstItem="lGf-Gv-Lwb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="k6T-BL-sqF"/>
+                            <constraint firstItem="Kz2-K7-iRm" firstAttribute="trailing" secondItem="WPP-mc-u0u" secondAttribute="trailing" id="lH2-Vm-QXv"/>
+                            <constraint firstItem="WPP-mc-u0u" firstAttribute="top" secondItem="Kz2-K7-iRm" secondAttribute="bottom" constant="25" id="oB6-Of-GfH"/>
+                            <constraint firstItem="Kz2-K7-iRm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="246" id="sSD-gp-v6R"/>
+                            <constraint firstItem="lGf-Gv-Lwb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="42" id="zjL-VT-gQs"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pickerView" destination="lGf-Gv-Lwb" id="aP2-98-w6Z"/>
+                        <outlet property="textFieldOne" destination="Kz2-K7-iRm" id="fe4-zw-vD4"/>
+                        <outlet property="textFieldTwo" destination="WPP-mc-u0u" id="OCw-UY-0c0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="380" y="337"/>
         </scene>
     </scenes>
 </document>
