@@ -12,7 +12,7 @@ import Bond
 
 class Post: PFObject, PFSubclassing {
     
-    var image: Observable<UIImage?> = Observable(nil)
+    var image: Observable <UIImage?> = Observable(nil)
 
     var photoUploadTask: UIBackgroundTaskIdentifier?
 
@@ -33,6 +33,7 @@ class Post: PFObject, PFSubclassing {
     override class func initialize() {
         var onceToken: dispatch_once_t = 0
         dispatch_once(&onceToken) {
+            
             // inform Parse about this subclass
             self.registerSubclass()
         }

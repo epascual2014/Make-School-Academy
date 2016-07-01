@@ -34,22 +34,33 @@ class ParseHelper {
     static let ParseUserUsername = "username"
     
     static func timelineRequestForCurrentUser(range: Range<Int>, completionBlock: PFQueryArrayResultBlock) {
+        
+        // fetch follow relationship for the current user
         let followingQuery = PFQuery(className: ParseFollowClass)
         followingQuery.whereKey(ParseFollowFromUser, equalTo:PFUser.currentUser()!)
         
+        // Fetch any posts that are created by users that currentl user is following
         let postsFromFollowedUsers = Post.query()
         postsFromFollowedUsers!.whereKey(ParsePostUser, matchesKey: ParseFollowToUser, inQuery: followingQuery)
         
+        // Fetch current user posts
         let postsFromThisUser = Post.query()
         postsFromThisUser!.whereKey(ParsePostUser, equalTo: PFUser.currentUser()!)
         
+        // Combine 2 queries
         let query = PFQuery.orQueryWithSubqueries([postsFromFollowedUsers!, postsFromThisUser!])
+        
+        // definte that the combined query should fetch the user assoc with the post
         query.includeKey(ParsePostUser)
-        query.orderByAscending(ParsePostCreatedAt)
+        
+        // define the order of the results to be stored
+        query.orderByDescending(ParsePostCreatedAt)
+        
         
         query.skip = range.startIndex
         query.limit = range.endIndex - range.startIndex
         
+        // kick off the network request
         query.findObjectsInBackgroundWithBlock(completionBlock)
     }
     
@@ -109,7 +120,7 @@ class ParseHelper {
     static func getFollowingUsersForUser(user: PFUser, completionBlock: PFQueryArrayResultBlock) {
         let query = PFQuery(className: ParseFollowClass)
         
-        query.whereKey(ParseLikeFromUser, equalTo: user)
+        query.whereKey(ParseFollowFromUser, equalTo: user)
         query.findObjectsInBackgroundWithBlock(completionBlock)
     }
     
@@ -118,11 +129,13 @@ class ParseHelper {
      :param: toUser - The user that is being followed
      */
     static func addFollowRelationshipFromUser(user: PFUser, toUser: PFUser) {
-        let followObject = PFObject(className: ParseFollowClass)
-        followObject.setObject(user, forKey: ParseFollowFromUser)
-        followObject.setObject(toUser, forKey: ParseFollowFromUser)
+        let thisFollowObject = PFObject(className: ParseFollowClass)
         
-        followObject.saveInBackgroundWithBlock(nil)
+        thisFollowObject.setObject(user, forKey: ParseFollowFromUser)
+        
+        thisFollowObject.setObject(toUser, forKey: ParseFollowToUser)
+        
+        thisFollowObject.saveInBackgroundWithBlock(nil)
     }
     
     /**
@@ -131,11 +144,11 @@ class ParseHelper {
      */
 
     static func removeFollowRelationshipFromUser(user: PFUser, toUser: PFUser) {
-        let query = PFQuery(className: ParseFollowClass)
-        query.whereKey(ParseFollowFromUser, equalTo: user)
-        query.whereKey(ParseFollowToUser, equalTo: toUser)
+        let thisQuery = PFQuery(className: ParseFollowClass)
+        thisQuery.whereKey(ParseFollowFromUser, equalTo: user)
+        thisQuery.whereKey(ParseFollowToUser, equalTo: toUser)
         
-        query.findObjectsInBackgroundWithBlock { (results: [PFObject]?, error: NSError?) -> Void in
+        thisQuery.findObjectsInBackgroundWithBlock { (results: [PFObject]?, error: NSError?) -> Void in
             
             let results = results ?? []
             
@@ -154,14 +167,16 @@ class ParseHelper {
     */
     
     static func allUsers(completionBlock: PFQueryArrayResultBlock) -> PFQuery {
-        let query = PFUser.query()!
-        // exclude the current user
-        query.whereKey(ParseHelper.ParseUserUsername, notEqualTo: PFUser.currentUser()!.username!)
-        query.orderByAscending(ParseHelper.ParseUserUsername)
-        query.limit = 20
+        let currentQuery = PFUser.query()!
         
-        query.findObjectsInBackgroundWithBlock(completionBlock)
-        return query
+        // exclude the current user
+        currentQuery.whereKey(ParseHelper.ParseUserUsername,
+                              notEqualTo: PFUser.currentUser()!.username!)
+        currentQuery.orderByAscending(ParseHelper.ParseUserUsername)
+        currentQuery.limit = 20
+        
+        currentQuery.findObjectsInBackgroundWithBlock(completionBlock)
+        return currentQuery
     }
     
     /**
@@ -177,13 +192,16 @@ class ParseHelper {
         lowercased username in a separate column and perform a regular string compare.
         */
         
-        let query = PFUser.query()!.whereKey(ParseHelper.ParseUserUsername, matchesRegex: searchText, modifiers: "i")
-        query.whereKey(ParseHelper.ParseUserUsername, notEqualTo: PFUser.currentUser()!.username!)
-        query.orderByAscending(ParseHelper.ParseUserUsername)
-        query.limit = 20
-        query.findObjectsInBackgroundWithBlock(completionBlock)
+        let thisQuery = PFUser.query()!.whereKey(ParseHelper.ParseUserUsername,
+                                             matchesRegex: searchText, modifiers: "i")
+        thisQuery.whereKey(ParseHelper.ParseUserUsername,
+                           notEqualTo: PFUser.currentUser()!.username!)
         
-        return query
+        thisQuery.orderByAscending(ParseHelper.ParseUserUsername)
+        thisQuery.limit = 20
+        thisQuery.findObjectsInBackgroundWithBlock(completionBlock)
+        
+        return thisQuery
     }
 }
 

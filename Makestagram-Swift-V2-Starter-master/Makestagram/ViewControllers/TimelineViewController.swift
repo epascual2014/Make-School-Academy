@@ -14,7 +14,7 @@ var photoTakingHelper: PhotoTakingHelper?
 
 class TimelineViewController: UIViewController, TimelineComponentTarget {
 
-    //var posts: [Post] = []
+    var posts: [Post] = []
     
     let defaultRange = 0...4
     let additionalRangeSize = 5
@@ -42,6 +42,7 @@ class TimelineViewController: UIViewController, TimelineComponentTarget {
         super.viewDidAppear(animated)
         
         timelineComponent.loadInitialIfRequired()
+
     }
 
 }
@@ -85,7 +86,7 @@ extension TimelineViewController: UITabBarControllerDelegate, UITableViewDataSou
         post.downloadImage()
         post.fetchLikes()
         cell.post = post
-        
+
         return cell
     }
     
