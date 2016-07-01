@@ -31,7 +31,7 @@ class ParseHelper {
     static let ParseFlaggedContentToPost = "toPost"
     
     // User Relation
-    static let ParseUserName = "username"
+    static let ParseUserUsername = "username"
     
     static func timelineRequestForCurrentUser(range: Range<Int>, completionBlock: PFQueryArrayResultBlock) {
         let followingQuery = PFQuery(className: ParseFollowClass)
@@ -97,6 +97,93 @@ class ParseHelper {
         query.includeKey(ParseLikeFromUser)
         query.findObjectsInBackgroundWithBlock(completionBlock)
         
+    }
+    
+    // MARK: Following
+    /*
+        Fetchers all user that the provided user is following.
+        :param: user - The user whose followees you want to retrieve
+        :param: completionBlock - The completion block that is called when the query completes
+    */
+    
+    static func getFollowingUsersForUser(user: PFUser, completionBlock: PFQueryArrayResultBlock) {
+        let query = PFQuery(className: ParseFollowClass)
+        
+        query.whereKey(ParseLikeFromUser, equalTo: user)
+        query.findObjectsInBackgroundWithBlock(completionBlock)
+    }
+    
+    /**
+     :param: user - The user that is following
+     :param: toUser - The user that is being followed
+     */
+    static func addFollowRelationshipFromUser(user: PFUser, toUser: PFUser) {
+        let followObject = PFObject(className: ParseFollowClass)
+        followObject.setObject(user, forKey: ParseFollowFromUser)
+        followObject.setObject(toUser, forKey: ParseFollowFromUser)
+        
+        followObject.saveInBackgroundWithBlock(nil)
+    }
+    
+    /**
+     :param: user - The user that is following
+     :param: toUser - The user that is being followed
+     */
+
+    static func removeFollowRelationshipFromUser(user: PFUser, toUser: PFUser) {
+        let query = PFQuery(className: ParseFollowClass)
+        query.whereKey(ParseFollowFromUser, equalTo: user)
+        query.whereKey(ParseFollowToUser, equalTo: toUser)
+        
+        query.findObjectsInBackgroundWithBlock { (results: [PFObject]?, error: NSError?) -> Void in
+            
+            let results = results ?? []
+            
+            for follow in results {
+                follow.deleteInBackgroundWithBlock(nil)
+            }
+        }
+    }
+    
+    // MARK: User
+    /**
+     Fest all user except the ones thats currently signed in.
+     Limits the amount of users returned to 20.
+     :param: completionBlock - The completion block that is called when the query completes.
+     :returns: The generated PFQuery
+    */
+    
+    static func allUser(completionBlock: PFQueryArrayResultBlock) -> PFQuery {
+        let query = PFUser.query()!
+        // exclude the current user
+        query.whereKey(ParseHelper.ParseUserUsername, notEqualTo: PFUser.currentUser()!.username!)
+        query.orderByAscending(ParseHelper.ParseUserUsername)
+        query.limit = 20
+        
+        query.findObjectsInBackgroundWithBlock(completionBlock)
+        return query
+    }
+    
+    /**
+     Fetch users whose usernames match the provided search term.
+     :param: searchText - The text that should be used to search for users.
+     :param: completionBlock - The completion block that is called when the query completes.
+     :returns: The generated PFQuery
+     */
+    
+    static func searchUsers(searchText: String, completionBlock: PFQueryArrayResultBlock) -> PFQuery {
+        /** We are using a Regex to allow for a case insensitive compare of usernames.
+        Regex can be slow on large datasets. For large amount of data it's better to store
+        lowercased username in a separate column and perform a regular string compare.
+        */
+        
+        let query = PFUser.query()!.whereKey(ParseHelper.ParseUserUsername, matchesRegex: searchText, modifiers: "i")
+        query.whereKey(ParseHelper.ParseUserUsername, notEqualTo: PFUser.currentUser()!.username!)
+        query.orderByAscending(ParseHelper.ParseUserUsername)
+        query.limit = 20
+        query.findObjectsInBackgroundWithBlock(completionBlock)
+        
+        return query
     }
 }
 
