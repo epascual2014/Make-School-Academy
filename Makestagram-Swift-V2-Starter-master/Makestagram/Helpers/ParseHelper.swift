@@ -69,7 +69,7 @@ class ParseHelper {
         let likeObject = PFObject(className: ParseLikeClass)
         likeObject[ParseLikeFromUser] = user
         likeObject[ParseLikeToPost] = post
-        likeObject.saveInBackgroundWithBlock(nil)
+        likeObject.saveInBackgroundWithBlock(ErrorHandling.errorHandlingCallback)
     }
     
     // MARK: Unlikes
@@ -78,13 +78,14 @@ class ParseHelper {
         query.whereKey(ParseLikeFromUser, equalTo: user)
         query.whereKey(ParseLikeToPost, equalTo: post)
         query.findObjectsInBackgroundWithBlock { (results: [PFObject]?, error: NSError?) -> Void in
+            
             if let actualResults = results  {
                 for likes in actualResults {
                     likes.deleteInBackgroundWithBlock(nil)
                 }
             }
             else if let actualError = error {
-                // results is nil --> has no value, show error
+                ErrorHandling.defaultErrorHandler(error!)
                 print(actualError)
             }
             

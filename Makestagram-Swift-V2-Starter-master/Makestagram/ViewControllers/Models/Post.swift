@@ -6,11 +6,14 @@
 //  Copyright © 2016 Make School. All rights reserved.
 //
 
+import ConvenienceKit
 import Foundation
 import Parse
 import Bond
 
 class Post: PFObject, PFSubclassing {
+    
+    static var imageCache: NSCacheSwift <String, UIImage>!
     
     var image: Observable <UIImage?> = Observable(nil)
 
@@ -36,6 +39,8 @@ class Post: PFObject, PFSubclassing {
             
             // inform Parse about this subclass
             self.registerSubclass()
+            // 1
+            Post.imageCache = NSCacheSwift <String, UIImage>()
         }
     }
     
@@ -60,12 +65,20 @@ class Post: PFObject, PFSubclassing {
     }
     
     func downloadImage() {
+        // 1 - assign value to image directly from cache if its successul skip the the block
+        image.value = Post.imageCache[self.imageFile!.name]
+        
         // if image is not downloaded yet, get it
         if (image.value == nil) {
             imageFile?.getDataInBackgroundWithBlock{ (data: NSData?, error: NSError?) -> Void in
                 if let data = data {
                     let image = UIImage(data: data, scale:1.0)!
                     self.image.value = image
+                    
+    
+                    
+                    // 2 - If we didnt have the image, we proceed as usual,then when image is downloaded, cache it
+                    Post.imageCache[self.imageFile!.name] = image
                 }
             }
         }
@@ -79,6 +92,8 @@ class Post: PFObject, PFSubclassing {
     
         ParseHelper.likesForPost(self, completionBlock: { (likes: [PFObject]?, error: NSError?) -> Void in
             let validLikes = likes?.filter { like in like[ParseHelper.ParseLikeFromUser] != nil }
+            
+            
             
             self.likes.value = validLikes?.map { like in
                 let fromUser = like[ParseHelper.ParseLikeFromUser] as! PFUser
