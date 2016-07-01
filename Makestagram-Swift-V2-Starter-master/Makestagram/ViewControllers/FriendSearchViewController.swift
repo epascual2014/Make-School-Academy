@@ -14,8 +14,11 @@ class FriendSearchViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
+    // stores all the user that match current search query
     var users: [PFUser]?
     
+    /* This is a local cache. It stores all the users this user is following. It is used to update the UI immediately upon user interaction, instead of having to wait for a server response.
+     */
     var followingUsers: [PFUser]? {
         didSet {
             /**
@@ -67,6 +70,7 @@ class FriendSearchViewController: UIViewController {
         super.viewWillAppear(animated)
         
         state = .DefaultMode
+        
         // fill the cache of a users followees
         ParseHelper.getFollowingUsersForUser(PFUser.currentUser()!) { (results: [PFObject]?, error: NSError?) -> Void in let relations = results ?? []
             // use map to extract the User from a Follow object
@@ -76,10 +80,6 @@ class FriendSearchViewController: UIViewController {
         }
     }
    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
 }
 
 // MARK: TableView Data Source
@@ -99,7 +99,9 @@ extension FriendSearchViewController: UITableViewDataSource {
             // check if current user is already following displayed user change button appearance based on result
             cell.canFollow = !alreadyFollowingUser.contains(user)
         }
+        
         cell.delegate = self
+        
         return cell
     }
 }

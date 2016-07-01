@@ -9,7 +9,7 @@
 import Foundation
 
 struct Configuration {
-    static let applicationID = "makestagram"
-    static let serverURL = "https://makestagram-parse-djh.herokuapp.com/parse"
+    static let applicationID = "summermakestagramep"
+    static let serverURL = "https://summer-ms-parse-epascual.herokuapp.com/parse"
     static let numberOfPosts = 10
 }

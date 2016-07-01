@@ -20,6 +20,7 @@ class FriendSearchTableViewCell: UITableViewCell {
     
     @IBOutlet weak var followUserButton: UIButton!
     
+    // Property delegate
     weak var delegate: FriendSearchTableViewCellDelegate?
     
     var user: PFUser? {

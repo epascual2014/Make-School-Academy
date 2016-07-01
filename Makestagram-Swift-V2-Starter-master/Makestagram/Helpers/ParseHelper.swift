@@ -145,15 +145,15 @@ class ParseHelper {
         }
     }
     
-    // MARK: User
+    // MARK: Users
     /**
-     Fest all user except the ones thats currently signed in.
+     Fetch all users except the ones thats currently signed in.
      Limits the amount of users returned to 20.
      :param: completionBlock - The completion block that is called when the query completes.
      :returns: The generated PFQuery
     */
     
-    static func allUser(completionBlock: PFQueryArrayResultBlock) -> PFQuery {
+    static func allUsers(completionBlock: PFQueryArrayResultBlock) -> PFQuery {
         let query = PFUser.query()!
         // exclude the current user
         query.whereKey(ParseHelper.ParseUserUsername, notEqualTo: PFUser.currentUser()!.username!)
