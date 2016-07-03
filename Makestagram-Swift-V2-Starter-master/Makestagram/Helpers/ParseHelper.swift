@@ -81,25 +81,13 @@ class ParseHelper {
             
             if let actualResults = results  {
                 for likes in actualResults {
-                    likes.deleteInBackgroundWithBlock(nil)
+                    likes.deleteInBackgroundWithBlock(ErrorHandling.errorHandlingCallback)
                 }
             }
             else if let actualError = error {
                 ErrorHandling.defaultErrorHandler(error!)
                 print(actualError)
             }
-            
-            // More simplier approach to the code above.
-            //            if results != nil {
-            //                // results has a value, show no error
-            //                let actualResults = results!
-            //                for likes in actualResults {
-            //                    likes.deleteInBackgroundWithBlock(nil)
-            //                }
-            //            } else {
-            //                // results has no value, show error
-            //
-            //            }
         }
     }
     
@@ -136,7 +124,7 @@ class ParseHelper {
         
         thisFollowObject.setObject(toUser, forKey: ParseFollowToUser)
         
-        thisFollowObject.saveInBackgroundWithBlock(nil)
+        thisFollowObject.saveInBackgroundWithBlock(ErrorHandling.errorHandlingCallback)
     }
     
     /**
@@ -154,7 +142,7 @@ class ParseHelper {
             let results = results ?? []
             
             for follow in results {
-                follow.deleteInBackgroundWithBlock(nil)
+                follow.deleteInBackgroundWithBlock(ErrorHandling.errorHandlingCallback)
             }
         }
     }
