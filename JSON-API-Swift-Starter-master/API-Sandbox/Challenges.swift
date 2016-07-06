@@ -27,23 +27,21 @@ internal func exerciseOne() {
     // Alright, now we have a JSON object from SwiftyJSON containing the user data!
     // Let's save the user's first name to a constant!
     let firstName = userData["results"][0]["name"]["first"].stringValue
+    let lastName = userData["results"][0]["name"]["last"].stringValue
+    let streetName = userData["results"][0]["location"]["street"].stringValue
+    let cityName = userData["results"][0]["location"]["city"].stringValue
+    let stateName = userData["results"][0]["location"]["state"].stringValue
+    let postalCode = userData["results"][0]["location"]["postcode"].stringValue
+    let titleName = userData["results"][0]["name"]["title"].stringValue
+    let emailAddress = userData["results"][0]["email"].stringValue
+    let cellPhone = userData["results"][0]["phone"].stringValue
+
+    print("\(firstName)", "\(lastName)", "lives at", "\(streetName)", "in", "\(cityName)","\(stateName)", "\(postalCode)",".", "If you want to contact", "\(titleName)","\(lastName)","you can email","\(emailAddress)", "or call at","\(cellPhone)")
+    
     // Do you see what we did there? We navigated down the JSON heirarchy, asked for "results",
     // then the first dictionary value of that array, then the dictionary stored in "name",
     // then the value stored in "first". We  then told it that we wanted the value as a string.
-    
-    /*
-     
-     Now it's your turn to get the rest of the values needed to print the following:
-     
-     "<first name> <last name> lives at <street name> in <city>, <state>, <post code>.
-     If you want to contact <title>. <last name>, you can email <email address> or
-     call at <cell phone number>."
-     
-     */
-    
-    
-    
-    
+
     
 }
 
@@ -62,13 +60,13 @@ internal func exerciseTwo() {
     // This JSON file contains the same data as the tutorial example.
     let moviesData = JSON(data: jsonData)
     
-    
     let topMovieData = moviesData["feed"]["entry"][0]
     let topMovie = Movie(json: topMovieData)
+   
     
     // Uncomment this print statement when you are ready to check your code!
     
-//    print("The top movie is \(topMovie.name) by \(topMovie.rightsOwner). It costs $\(topMovie.price) and was released on \(topMovie.releaseDate). You can view it on iTunes here: \(topMovie.link)")
+    print("The top movie is \(topMovie.name) by \(topMovie.rightsOwner). It costs $\(topMovie.price) and was released on \(topMovie.releaseDate). You can view it on iTunes here: \(topMovie.link)")
 }
 
 internal func exerciseThree() {
@@ -105,7 +103,8 @@ internal func exerciseThree() {
      contains the `String` "Disney". Iterate over all the values in `allMovies` to check!
      
      */
-//    print("The following movies are Disney movies:")
+    
+    print("The following movies are Disney movies:")
     
     
     
